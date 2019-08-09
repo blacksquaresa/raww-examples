@@ -20,12 +20,14 @@ const myObj = {
   arr: [45, 60],
   func: func3,
   utils: {
-    func1, func2, func3
+    func1,
+    func2,
+    func3
   }
 };
 
 // This array references our deep object again - and all the functions again
-const deep: any[] = [ myObj, func2 ];
+const deep: any[] = [myObj, func2];
 
 // Create a class to perform our demo functions
 // this class has three simple methods: add to add two numbers, sub to subtract and error to throw an error
@@ -40,14 +42,12 @@ class Adder {
     { func1, func2, func3, myObj },
     { deep }
   )
-  add(x: number, y: number) {
-    return new Promise((resolve, reject) => {
-      myObj.func();
-      myObj.utils.func2();
-      deep[0].utils.func3();
-      const result = x + y;
-      resolve(result);
-    });
+  public async add(x: number, y: number) {
+    myObj.func();
+    myObj.utils.func2();
+    deep[0].utils.func3();
+    const result = x + y;
+    return result;
   }
 
   // This function does not use the decorator, but is hoisted manually in the constructor
