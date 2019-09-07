@@ -66,7 +66,7 @@ class Adder {
   }
 }
 
-// This code creates references to the DOM elements we'll use later 
+// This code creates references to the DOM elements we'll use later
 let num1: HTMLInputElement =
   (document.getElementById("num1") as HTMLInputElement) ||
   new HTMLInputElement();
